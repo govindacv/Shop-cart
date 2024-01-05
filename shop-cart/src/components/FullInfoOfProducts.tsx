@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import '../styles/FullInfoIfProduct.css'
 import { useDispatch } from "react-redux"
 import { addToCart } from "../dux/CartSlice"
@@ -14,7 +14,7 @@ const FullInfoOfProducts =()=>{
     const item=items[1]
     console.log(item);
     const {
-        id,
+        
         title,
         description,
         discountPercentage,
@@ -27,7 +27,7 @@ const FullInfoOfProducts =()=>{
         images 
       }=item;
        const dispatch=useDispatch()
-   const handleBuyNow=(item)=>{ 
+   const handleBuyNow=(item:any)=>{ 
         dispatch(addToCart(item))
    }
    
@@ -50,7 +50,7 @@ const FullInfoOfProducts =()=>{
                  
         <>
         {
-                        images.map((val)=>(
+                        images.map((val:any)=>(
                             <img src={val} alt=""  height={100} width={100}/>
                         ))
                     }

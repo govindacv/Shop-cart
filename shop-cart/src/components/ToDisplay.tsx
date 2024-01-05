@@ -4,11 +4,11 @@ import '../styles/ToDisplay.css'
 import { addToCart, updateStatusOfCart } from "../dux/CartSlice";
 import { addTowishList } from "../dux/WishListSlice";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+
 const ToDisplay = () => {
     const products = useSelector(allItems);
     const dispatch = useDispatch();
-    const[count,setCount]=useState(0)
+
     const handleHeart = (val: any) => {
         dispatch(addTowishList(val))
 
@@ -18,7 +18,7 @@ const ToDisplay = () => {
         console.log(val);
         dispatch(addToCart(val))
         dispatch(updateStatusOfCart(val))
-        setCount((prev)=>prev+1)
+
 
 
     }
@@ -52,9 +52,9 @@ const ToDisplay = () => {
                             <br />
                             <div className="cart--but">
                                 {!val[1].isAddedToCart ? <div className="button"><button onClick={() => handleAddToCartClick(val[1])}   >Add To Cart</button></div>
-                                    :  <p>test</p>
+                                    : <p>test</p>
                                 }
-                                 
+
 
                             </div>
                         </div>

@@ -8,24 +8,26 @@ import { addToSearchedProduct, foundResults } from '../dux/SearchSlice'
 const Navbar = () => {
 
     const countOfCartItems = useSelector(count)
-    const searchProducts=useRef<HTMLInputElement|null>(null)
-    const[productToBeSearched,setProductToBeSearched]=useState("")
-    const dispatch=useDispatch()
-    const handleOnChangeSearchProduct=()=>{
-            setProductToBeSearched(searchProducts.current?.value);   
-    }       
-    const allProducts=useSelector(allItems)
-    const foundProduct=allProducts.filter((val)=>{
-        return val.title.toLowerCase()===productToBeSearched.toLocaleLowerCase()
+    const searchProducts = useRef<HTMLInputElement | null>(null)
+    const [productToBeSearched, setProductToBeSearched] = useState("")
+    const dispatch = useDispatch()
+    const handleOnChangeSearchProduct = () => {
+        if (searchProducts.current?.value != undefined) {
+            setProductToBeSearched(searchProducts.current?.value);
+        }
+    }
+    const allProducts = useSelector(allItems)
+    const foundProduct = allProducts.filter((val:any) => {
+        return val.title.toLowerCase() === productToBeSearched.toLocaleLowerCase()
     })
-    const handleSearch=()=>{
-        console.log(foundProduct);   
-        dispatch(addToSearchedProduct(foundProduct))     
-        
-        
+    const handleSearch = () => {
+        console.log(foundProduct);
+        dispatch(addToSearchedProduct(foundProduct))
+
+
     }
     console.log(useSelector(foundResults));
-    
+
 
     return (
         <div className="navbar">
@@ -46,7 +48,7 @@ const Navbar = () => {
                     <Link to={'/'}  >Delivery</Link>
                 </div>
                 <div className="navbar content2--searchbar">
-                    <input type="text" placeholder='Search Product' ref={searchProducts}  onChange={handleOnChangeSearchProduct}/>
+                    <input type="text" placeholder='Search Product' ref={searchProducts} onChange={handleOnChangeSearchProduct} />
                     <Link to={'/searchedProduct'}><i className="fa-solid fa-magnifying-glass" onClick={handleSearch}></i></Link>
                 </div>
             </div>
@@ -63,11 +65,11 @@ const Navbar = () => {
                     <Link to={'/wishlist'}>Wishlist</Link>
                 </div>
                 <div className="navbar content3--cart">
-                <div className="countOfCartItems">{countOfCartItems}</div>
-                   <Link to={'/cart'}> 
-                    <i className="fa-solid fa-cart-shopping"></i>
-                    Cart
-                   </Link>
+                    <div className="countOfCartItems">{countOfCartItems}</div>
+                    <Link to={'/cart'}>
+                        <i className="fa-solid fa-cart-shopping"></i>
+                        Cart
+                    </Link>
                 </div>
             </div>
         </div>

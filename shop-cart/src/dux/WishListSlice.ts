@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { count } from "./CartSlice";
+ 
 
-const initialState = {
+const initialState:any = {
     wishList: [],
     countOfWishList:0
 };
@@ -13,7 +13,7 @@ const wishListSlice = createSlice({
         addTowishList: (state, { payload }) => {
 
 
-            const existingItem = state.wishList.find(item => item.id === payload.id);
+            const existingItem = state.wishList.find((item:any) => item.id === payload.id);
 
             if (!existingItem) {
                 state.wishList = [...state.wishList, payload];
