@@ -14,7 +14,7 @@ const SearchSlice = createSlice({
   },
 });
 
-export const foundResults = (state) => state.search.searchedProduct;
+export const foundResults = (state:any) => state.search.searchedProduct;
 
 export const { addToSearchedProduct } = SearchSlice.actions;
 
