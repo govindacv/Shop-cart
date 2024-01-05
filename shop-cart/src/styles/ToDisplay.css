@@ -1,0 +1,72 @@
+.toDisplayProducts
+{
+    
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+}
+.proudct
+{
+    width: 23%;
+    border: 1px solid ;
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px #053506;
+    position: relative;
+    display: flex;
+    flex-direction: column;  
+    z-index: 0;
+    background-color: black;
+    color: white;
+    box-shadow: 1px 1px 10px #00ff04;
+}
+.proudct>.thumbnail{
+    border-radius: 10%;
+    padding: 10px;
+     
+    z-index: 1;
+}
+.proudct>.thumbnail img{
+    display: flex;
+    border-radius: 10%;
+    cursor: pointer;
+}
+ 
+.info{
+    padding: 10px;
+    height: 180px;
+}
+.info p{
+    padding: 10px;
+}
+.cart--but{
+    padding-bottom: 10px;
+    padding-top: 10px ;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+   
+}
+.cart--but button{
+    text-align: center;
+    padding: 10px 80px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.cart--but button:hover{
+    background-color: #053506;
+    color: white;
+}
+.wishlist--heart
+{
+    font-size: 1.3rem;
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    right:  20px;
+    color: red;
+    cursor: pointer;
+}

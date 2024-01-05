@@ -1,0 +1,78 @@
+
+
+.footer2 {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}   
+
+.footer2_block1 {
+    display: flex;
+}
+
+.section7 {
+
+    position: relative;
+    padding: 40px;
+}
+
+.gift-image {
+    position: absolute;
+    bottom: 150px;
+    left: 30%;
+    background-color: white;
+    padding: 40px;
+
+
+}
+
+.image_gift {
+    width: 600px;
+    height: 500px;
+}
+
+.close_card {
+    position: absolute;
+    right: 20px;
+    color: #a00e1c;
+    top: 10px;
+    font-size: 20px;
+}
+
+.cart_number {
+    position: absolute;
+    top: 12px;
+    color: red;
+
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.wish:hover {
+    color: red;
+}
+.fa-solid
+{
+    margin-right: 10px;
+    cursor: pointer;
+}
+.toDisplayGift
+{
+    height: 50%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: -700dvh;
+   
+}
+.toDisplayGift i
+{
+    position: absolute;
+    color: white;
+    top: 10px;
+    right: 2px;
+}

@@ -1,0 +1,14 @@
+.displayOfFullInfo
+{
+    display: flex;
+    padding: 30px;
+}
+.fullInfoButton button 
+{
+    width: 100px;
+    padding: 5px;
+    background-color: green;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+}

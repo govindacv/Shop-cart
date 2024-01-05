@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.YourSearchResults
+{
+    padding: 15px 20px;
+    background-color: orangered;
+    position: sticky;
+    top: 0;
+}
+.ToDisplaySearchResult
+{
+    width: 100%;
+    background-color: yellow;
+}
+.headingOf
+{
+    padding: 15px 20px;
+    background-color: yellow;
+    
+}

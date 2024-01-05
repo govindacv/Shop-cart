@@ -1,0 +1,28 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+.advertisement
+{
+    display: flex;
+    justify-content: space-between;
+    background-color:#053506;
+    color: white;
+    padding:  5px 20px;
+}
+a{
+    color: white;
+}
+.content2
+{
+        display: flex;
+        align-items: center;
+}
+select
+{
+    background-color:#053506 ;
+    color: white;
+    width: 7dvw;
+    border: none;
+}

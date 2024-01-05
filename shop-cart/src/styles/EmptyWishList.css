@@ -1,0 +1,32 @@
+.emptyWishList
+{
+    height: 100dvh;
+    width: 100%;  
+    background-image: url('https://cdn.wallpapersafari.com/74/14/Z2EiRu.jpg');
+
+    background-size: cover; 
+background-repeat: no-repeat;  
+}
+.emptyWishList--msg 
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3.5rem;
+     position: absolute;
+    left: 400px;
+    top: 30%;
+}
+.emptyWishList--button
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4rem;
+     position: absolute;
+    left: 550px;
+    top: 70%;
+}
+.emptyWishList--button button
+{
+    padding: 10px 60px;
+    border-radius: 10px;
+    border: 1px solid  black;
+    cursor: pointer;
+}

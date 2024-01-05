@@ -1,0 +1,35 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+.categories
+{
+    padding: 10px 20px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 5px;
+}
+
+.categories button
+{
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.categories>div
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.categories button:hover
+{
+    background-color: #053506;
+    color: white;
+}
+.sortBy
+{
+    padding: 15px 20px;
+}
