@@ -6,20 +6,25 @@ import '../styles/Categories.css'
 const Categories = () => {
     const [products, setProducts] = useState([])
     const dispatch = useDispatch()
-   
+
     useEffect(() => {
         axios.get("https://dummyjson.com/products")
             .then((response) => {
 
-                setProducts(response.data.products)
+                setProducts(response.data.products);
+                // dispatch(addProducts(response.data.products))
+              
+                
             })
             .catch(() => {
                 console.log("error")
             }
             )
     }, [])
+    console.log('rendering');
+    
 
-    dispatch(addProducts(products))
+
 
 
     const handleallitems = (name: string) => {
@@ -39,7 +44,7 @@ const Categories = () => {
     const handleChangeSort = (e: any) => {
         let sortedProducts = [...products];
         if (e === "Price") {
-            sortedProducts.sort((a:any, b:any) => a.price - b.price)
+            sortedProducts.sort((a: any, b: any) => a.price - b.price)
             setProducts(sortedProducts)
 
             dispatch(addProducts(sortedProducts))
@@ -48,7 +53,7 @@ const Categories = () => {
         if (e === "A-Z") {
 
 
-            sortedProducts.sort((a:any, b:any) => a.title.localeCompare(b.title));
+            sortedProducts.sort((a: any, b: any) => a.title.localeCompare(b.title));
 
             console.log(sortedProducts);
 

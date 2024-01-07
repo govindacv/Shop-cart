@@ -7,11 +7,12 @@ import { addToCart } from "../dux/CartSlice"
 const FullInfoOfProducts =()=>{
  
  
-    const loc = useLocation()
+    const location = useLocation()
 
    
-    const items:any = Object.values(loc.state)[0]
-    const item=items[1]
+    const items:any = location.state
+    const item=items.val
+    
     console.log(item);
     const {
         
@@ -34,6 +35,7 @@ const FullInfoOfProducts =()=>{
     return(
         <>
        
+        <div className="bcg">
         <div className="displayOfFullInfo">
             <div className="thumbnail">
                <img src={thumbnail} alt="" />
@@ -60,6 +62,7 @@ const FullInfoOfProducts =()=>{
              <div className="fullInfoButton">
                 <button onClick={()=>handleBuyNow(item)}>Add To cart</button>
              </div>
+        </div>
         </div>
         </>
     )

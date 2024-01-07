@@ -5,7 +5,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState:any = {
   cart: [],
   count: 0,
-
+   
 };
 const cartSlice = createSlice({
   name: "cartItem",
@@ -17,7 +17,7 @@ const cartSlice = createSlice({
 
 
       if (!existingItem) {
-        state.cart = [...state.cart, { ...payload,quantity:1,isAddedToCart:false}];
+        state.cart = [...state.cart, { ...payload,quantity:1}];
         state.count = state.count + 1;
       }
     },
@@ -46,14 +46,7 @@ const cartSlice = createSlice({
       state.count-=1
 
     },
-    updateStatusOfCart:(state,{payload})=>{
-       state.cart.map((objs:any)=>{
-        if(objs.id===payload.id)
-        {
-          objs.isAddedToCart=true
-        }
-       })
-    }
+
 
   },
 });
@@ -61,6 +54,7 @@ const cartSlice = createSlice({
 
 export const cartItems = (state: any) => state.cartItem.cart;
 export const count = (state: any) => state.cartItem.count;
+ 
 export const totalPrice=(state:any)=>{
   return(
     state.cart.map((obj:any)=>{
@@ -69,6 +63,6 @@ export const totalPrice=(state:any)=>{
     })
   )
 }
-export const { addToCart ,updateCount,decreaseCount,removeFromCart,updateStatusOfCart} = cartSlice.actions;
+export const { addToCart ,updateCount,decreaseCount,removeFromCart} = cartSlice.actions;
 
 export default cartSlice.reducer;

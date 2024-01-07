@@ -1,8 +1,17 @@
+.bcg{
+    height: 100dvh;
+    width: 100dvw;
+    background-color: black;
+    color: white;
+
+}
 .displayOfFullInfo
 {
     display: flex;
     padding: 30px;
+    
 }
+
 .fullInfoButton button 
 {
     width: 100px;

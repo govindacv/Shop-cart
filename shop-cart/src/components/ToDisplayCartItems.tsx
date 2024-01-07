@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { cartItems, count, decreaseCount, removeFromCart, updateCount } from '../dux/CartSlice';
 import '../styles/ToDisplayCartItems.css';
 import { EmptyCart } from './EmptyCart';
+import { updateStatusOfCartToFalse } from '../dux/ProuctSlice';
 
 
 const ToDisplayCartItems = () => {
@@ -35,6 +36,7 @@ const ToDisplayCartItems = () => {
   //To Remove
   const handleRemoveFromCart = (obj: any) => {
     dispatch(removeFromCart(obj))
+    dispatch(updateStatusOfCartToFalse(obj))
   }
   let boolRes = false
   if (cartItemsCount === 0) {
@@ -86,6 +88,7 @@ const ToDisplayCartItems = () => {
               ))}
             </div>
           </div>
+          
         </>
       )}
       {

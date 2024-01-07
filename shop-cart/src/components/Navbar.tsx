@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { count } from '../dux/CartSlice'
 import { useRef, useState } from 'react'
 import { allItems } from '../dux/ProuctSlice'
-import { addToSearchedProduct, foundResults } from '../dux/SearchSlice'
+import { addToSearchedProduct,  } from '../dux/SearchSlice'
 const Navbar = () => {
 
     const countOfCartItems = useSelector(count)
@@ -26,7 +26,7 @@ const Navbar = () => {
 
 
     }
-    console.log(useSelector(foundResults));
+     
 
 
     return (
