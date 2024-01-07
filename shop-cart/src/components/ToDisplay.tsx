@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { allItems, updateStatusOfCart } from "../dux/ProuctSlice";
+import { allItems, updateStatusOfCart, updateStatusOfWishList } from "../dux/ProuctSlice";
 import '../styles/ToDisplay.css'
 import { addToCart } from "../dux/CartSlice";
 import { addTowishList } from "../dux/WishListSlice";
@@ -11,7 +11,8 @@ const ToDisplay = () => {
     const handleHeart = (val: any) => {
 
 
-        dispatch(addTowishList(val))
+        dispatch(addTowishList(val));
+        dispatch(updateStatusOfWishList(val))
 
     }
 
@@ -43,7 +44,7 @@ const ToDisplay = () => {
                     products.map((val: any) => (
 
 
-                        <div className="proudct">
+                        <div className="proudct" key={val.id}>
                             <div className="wishlist--heart">
                                 {
                                     !val.isAddedToWishList ? <i className="fa-regular fa-heart" onClick={() => handleHeart(val)}></i> : <i className="fa-solid fa-heart"></i>
